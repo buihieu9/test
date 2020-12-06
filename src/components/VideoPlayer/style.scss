@@ -1,0 +1,125 @@
+.container-player {
+    width: 100%;
+    height: 55rem;
+    background-color: rgb(37, 36, 36);
+
+
+    .box-video {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        &:hover > .controls {
+            bottom: 0;
+        }
+
+        i{
+            cursor: pointer;
+        }
+        .controls {
+            position: absolute;
+            right: 0;
+            left: 0;
+            bottom: -64px;
+            margin: 0 3rem;
+            transition: all .4s;
+            // background-color: rgba(255,255,255,.1);
+            .container-progress {
+                background-color: gray;
+                display: flex;
+                cursor: pointer;
+                border-radius: 10px;
+                .progress {
+                    border-radius: 10px;
+                    flex-basis: 0;
+                    background-color: #81B29A;
+                    // transition: all .1s;
+                    height: 0.5rem;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+
+                    &:hover::before {
+                        opacity: 1;
+                        transform: scale(1)
+                    }
+                    &::before {
+                        content: "";
+                        width: 1rem;
+                        height: 1rem;
+
+                        background-color: yellow;
+                        position: absolute;
+                        border-radius: 50%;
+                        right: -5px;
+
+                        opacity: 0;
+                        transition: all .2s;
+                        transform: scale(0);
+                    }
+                }
+            }
+            .btn-volum, .btn-play, .fullsceen{
+                display: flex;
+                align-items: center;
+                flex-basis: calc((100%/12)*4) ;
+            }
+            .btn-play {
+                justify-content: center;
+                font-size: 2rem;
+                .current-time {
+                    font-size: 1.4rem;
+                    margin-right: 2rem;
+                }
+                .duration-time {
+                    font-size: 1.4rem;
+                    margin-left: 2rem;
+                }
+                .icon-play {
+                    .far{
+                        font-size: 3.5rem;
+                    }
+                    margin: 0 2rem;
+                }
+            }
+            .fullsceen {
+                justify-content: flex-end;
+                font-size: 1.8rem;
+            }
+            .btn-volum {
+                font-size: 1.8rem;
+                .fas {
+                    margin-right: 1rem;
+                }
+            }
+            .btn-container {
+                padding: 1rem 0;
+
+                width: 100%;
+                display: flex;
+            }
+
+        }
+    }
+}
+
+
+
+video {
+    outline: none;
+}
+
+.fa-forward{
+    opacity: 1;
+    transition: all .4s;
+    transform: scale(1);
+}
+
+
+.icon-forward:active > .fa-forward {
+    transform: scale(1.5);
+
+    opacity: 0;
+}
